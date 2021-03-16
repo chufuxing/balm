@@ -1,0 +1,41 @@
+{
+    "name": "balm",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dist": "electron-builder --win --x64",
+        "start": "vue-cli-service serve --port 8080",
+        "start:all": "concurrently \"npm run start:balm\" \"npm run start:balm-login\" \"npm run start:balm-ui\" \"npm run electron:serve\"",
+        "install:all": "npm run install:balm ",
+        "build": "vue-cli-service build",
+        "electron:build": "vue-cli-service electron:build",
+        "electron:serve": "vue-cli-service electron:serve",
+        "postinstall": "electron-builder install-app-deps",
+        "postuninstall": "electron-builder install-app-deps",
+        "start:balm": "npm run start",
+        "start:balm-login": "cd balm-login && npm run start",
+        "start:balm-ui": "cd balm-ui && npm run start"
+    },
+    "main": "background.js",
+    "dependencies": {
+        "axios": "^0.21.1",
+        "core-js": "^3.6.5",
+        "element-ui": "^2.15.0",
+        "lodash": "^4.17.21",
+        "qiankun": "^2.4.0",
+        "vue": "^2.6.11",
+        "vue-router": "^3.2.0"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "~4.5.0",
+        "@vue/cli-plugin-router": "~4.5.0",
+        "@vue/cli-service": "~4.5.0",
+        "concurrently": "^6.0.0",
+        "electron": "^11.0.0",
+        "electron-devtools-installer": "^3.1.0",
+        "node-sass": "^5.0.0",
+        "vue-cli-plugin-electron-builder": "~2.0.0-rc.6",
+        "vue-template-compiler": "^2.6.11"
+    },
+    "__npminstall_done": false
+}
